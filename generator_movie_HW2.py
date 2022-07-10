@@ -9,6 +9,7 @@ class Movie:
     dates: List[Tuple[datetime, datetime]]
 
     def schedule(self) -> Generator[datetime, None, None]:
+        """Функция, выводящая все дни проката фильма"""
         for i in range(len(self.dates)):
             delta = self.dates[i][1] - self.dates[i][0]
             for j in range(delta.days + 1):
@@ -20,6 +21,5 @@ if __name__ == '__main__':
         (datetime(2020, 1, 1), datetime(2020, 1, 7)),
         (datetime(2020, 1, 15), datetime(2020, 2, 7))
     ])
-    # print(m.dates[0][0] - m.dates[0][1])
     for d in m.schedule():
         print(d)

@@ -8,7 +8,7 @@ def cache_decorator(func):  # не разобрался в тонкостях ty
             print("кэширование сработало!")
             result = dict_cache[number]
         else:
-            result = func(number)
+            result = func(number, *args, **kwargs)
             dict_cache[number] = result
         return result
     return wrapper

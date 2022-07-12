@@ -1,5 +1,5 @@
 from typing import Union
-from heroes import Superman, SuperHero
+from heroes import Superman, SuperHero, WonderWoman, Batman
 from places import Kostroma, Tokyo
 from make_news import TV, Newspaper
 
@@ -16,3 +16,7 @@ if __name__ == '__main__':
     save_the_place(Superman(), Kostroma(), TV())
     print('-' * 20)
     save_the_place(SuperHero('Chack Norris', False), Tokyo(), Newspaper())
+    print('-' * 20)
+    save_the_place(WonderWoman(), Kostroma(), TV())
+    print('-' * 20)
+    save_the_place(Batman(), Kostroma(), TV())

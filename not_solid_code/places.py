@@ -6,7 +6,7 @@ class Kostroma:
 
 
 class Tokyo:
-    name = 'Tokyo'
+    city_name = 'Tokyo'
 
     def get_godzilla(self):
         print('Godzilla stands near a skyscraper')

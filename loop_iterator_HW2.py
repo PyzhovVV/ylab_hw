@@ -1,9 +1,6 @@
-from dataclasses import dataclass
-
-
-@dataclass
 class CyclicIterator:
-    iterable: set | list | tuple | dict | frozenset | str | range
+    def __init__(self, iterable):
+        self.iterable = iterable
 
     def __iter__(self):
         self.max: int = len(self.iterable)

@@ -3,8 +3,8 @@ class CyclicIterator:
         self.iterable = iterable
 
     def __iter__(self):
-        self.max: int = len(self.iterable)
-        self.i: int = 0
+        self.max = len(self.iterable)
+        self.i = 0
         return self
 
     def __next__(self):

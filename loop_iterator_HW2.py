@@ -1,10 +1,10 @@
 class CyclicIterator:
     def __init__(self, iterable):
         self.iterable = iterable
-
-    def __iter__(self):
         self.max = len(self.iterable)
         self.i = 0
+
+    def __iter__(self):
         return self
 
     def __next__(self):

@@ -4,7 +4,7 @@ from places import Kostroma, Tokyo, NewYork
 from make_news import TV, Newspaper
 
 
-def save_the_place(hero: SuperHero, place: Union[Kostroma, Tokyo], news):
+def save_the_place(hero: SuperHero, place: Union[Kostroma, Tokyo, NewYork], news):
     hero.find(place)
     hero.attack()
     if hero.can_use_ultimate_attack:

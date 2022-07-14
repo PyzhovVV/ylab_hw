@@ -17,6 +17,6 @@ class CyclicIterator:
 
 
 if __name__ == '__main__':
-    cyclic_iterator = CyclicIterator('tuple([1, 3, 5, 4, 3, 6, 8])')
+    cyclic_iterator = CyclicIterator([2, 'hello', 4, 6, 8, 10])
     for i in cyclic_iterator:
         print(i)

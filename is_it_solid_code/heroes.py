@@ -1,5 +1,4 @@
 from antagonistfinder import AntagonistFinder
-from random import randint
 
 
 class Guns:
@@ -20,67 +19,54 @@ class Punches:
         print('Bump')
 
 
-class SuperHero(Guns, Punches):
+class SuperHero:
 
     def __init__(self, name, can_use_ultimate_attack=True):
         self.name = name
         self.can_use_ultimate_attack = can_use_ultimate_attack
         self.finder = AntagonistFinder()
 
-    def find(self, place):
-        self.finder.get_antagonist(place)
-
-    def arbitrary_ultimate(self):
+    def type_ultimate(self):
         print('Baaaaaaang!')
 
     def attack(self):
-        type_attack = randint(1, 4)
-        match type_attack:
-            case 1:
-                self.fire_a_gun()
-            case 2:
-                self.right_hook()
-            case 3:
-                self.left_hook()
-            case 4:
-                self.roundhouse_kick()
+        print('Kick')
+
+    def find(self, place):
+        self.finder.get_antagonist(place)
 
     def ultimate(self):
-        self.arbitrary_ultimate()
+        self.type_ultimate()
 
 
-class Batman(SuperHero):
+class Batman(SuperHero, Punches):
 
     def __init__(self):
-        super(Batman, self).__init__('Bruce Wayne', True)
+        super(Batman, self).__init__('Bruce Wayne', False)
 
-    def throw_a_batarang(self):
-        print('Fruuuuwww!')
-
-    def ultimate(self):
-        self.throw_a_batarang()
+    def attack(self):
+        self.roundhouse_kick()
 
 
-class WonderWoman(SuperHero):
+class WonderWoman(SuperHero, Punches):
 
     def __init__(self):
         super(WonderWoman, self).__init__('Diana Prince', True)
 
-    def use_zeus_bracelets(self):
+    def attack(self):
+        self.right_hook()
+
+    def type_ultimate(self):
         print('Scccrrruuushhh!')
 
-    def ultimate(self):
-        self.use_zeus_bracelets()
 
-
-class Superman(SuperHero):
+class Superman(SuperHero, Punches):
 
     def __init__(self):
         super(Superman, self).__init__('Clark Kent', True)
 
-    def incinerate_with_lasers(self):
+    def attack(self):
+        self.left_hook()
+
+    def type_ultimate(self):
         print('Wzzzuuuup!')
-
-    def ultimate(self):
-        self.incinerate_with_lasers()
-
